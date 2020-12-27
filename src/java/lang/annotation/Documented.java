@@ -1,40 +1,8 @@
-/*
- * Copyright (c) 2003, 2004, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
 package java.lang.annotation;
 
 /**
- * Indicates that annotations with a type are to be documented by javadoc
- * and similar tools by default.  This type should be used to annotate the
- * declarations of types whose annotations affect the use of annotated
- * elements by their clients.  If a type declaration is annotated with
- * Documented, its annotations become part of the public API
- * of the annotated elements.
- *
- * @author  Joshua Bloch
- * @since 1.5
+ * 表示带有类型的注解默认由javadoc和类似的工具来记录。此类型应用于注释类型的声明，这些类型的注释会影响其客户端对已注释元素的使用.
+ * 如果一个类型声明被注解为Documented，它的注解就会成为被注解元素的公共API的一部分。
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

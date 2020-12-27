@@ -1,59 +1,19 @@
-/*
- * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
 package java.lang.annotation;
 
 /**
- * The common interface extended by all annotation types.  Note that an
- * interface that manually extends this one does <i>not</i> define
- * an annotation type.  Also note that this interface does not itself
- * define an annotation type.
- * 被所有注解类型继承的通用接口。注意的是手动继承该接口不定义一个注解类型。还要注意
- * 该接口本身不定义注解类型。
+ * 所有注解类型继承的通用接口。请注意，手动继承这个接口并没有定义一个注解类型。
+ * 还要注意的是，这个接口本身并没有定义一个注解类型。。
  *
- * More information about annotation types can be found in section 9.6 of
- * <cite>The Java&trade; Language Specification</cite>.
+ * 关于注解类型的更多信息，请参见《Java语言规范》第9.6节。
  *
- * The {@link java.lang.reflect.AnnotatedElement} interface discusses
- * compatibility concerns when evolving an annotation type from being
- * non-repeatable to being repeatable.
- *
- * @author  Josh Bloch
- * @since   1.5
+ * java.lang.reflect.AnnotatedElement 接口讨论了将注解类型从不可重复进化到可重复时的兼容性问题。.
  */
 public interface Annotation {
     /**
-     * Returns true if the specified object represents an annotation
-     * that is logically equivalent to this one.  In other words,
-     * returns true if the specified object is an instance of the same
-     * annotation type as this instance, all of whose members are equal
-     * to the corresponding member of this annotation, as defined below:
+     * 如果指定对象代表的注解在逻辑上等同于这个注解，则返回true。 换句话说，如果指定的对象是一个与这个实例相同的注解类型的实例，
+     * 其所有成员都等于这个注解的相应成员，则返回true。如下所述:
      * <ul>
-     *    <li>Two corresponding primitive typed members whose values are
-     *    <tt>x</tt> and <tt>y</tt> are considered equal if <tt>x == y</tt>,
-     *    unless their type is <tt>float</tt> or <tt>double</tt>.
+     *    两个相应的基元类型成员，其值是如果x == y，x和y被认为是相等的，除非它们的类型是float或double。
      *
      *    <li>Two corresponding <tt>float</tt> members whose values
      *    are <tt>x</tt> and <tt>y</tt> are considered equal if
@@ -83,17 +43,15 @@ public interface Annotation {
     boolean equals(Object obj);
 
     /**
-     * Returns the hash code of this annotation, as defined below:
+     * 返回此注解的哈希码，定义如下:
      *
-     * <p>The hash code of an annotation is the sum of the hash codes
-     * of its members (including those with default values), as defined
-     * below:
+     * 注解的哈希码是其成员（包括具有默认值的成员）的哈希码的总和，定义如下。:
      *
      * The hash code of an annotation member is (127 times the hash code
      * of the member-name as computed by {@link String#hashCode()}) XOR
      * the hash code of the member-value, as defined below:
      *
-     * <p>The hash code of a member-value depends on its type:
+     * 一个成员值的哈希码取决于它的类型:
      * <ul>
      * <li>The hash code of a primitive value <tt><i>v</i></tt> is equal to
      *     <tt><i>WrapperType</i>.valueOf(<i>v</i>).hashCode()</tt>, where
@@ -113,28 +71,19 @@ public interface Annotation {
      *     on the value.  (There is one overloading for each primitive
      *     type, and one for object reference types.)
      * </ul>
-     *
-     * @return the hash code of this annotation
      */
     int hashCode();
 
     /**
-     * Returns a string representation of this annotation.  The details
-     * of the representation are implementation-dependent, but the following
-     * may be regarded as typical:
-     * 返回该注解的字符串表示。表示的详情跟具体实现相关，但是一般按照下面的格式表示。
+     * 返回该注解的字符串表示。表示的详情取决于具体实现，但是一般按照下面的格式表示。
      * <pre>
      *   &#064;com.acme.util.Name(first=Alfred, middle=E., last=Neuman)
      * </pre>
-     *
-     * @return a string representation of this annotation
      */
     String toString();
 
     /**
-     * Returns the annotation type of this annotation.
      * 返回该注解的注解类型
-     * @return the annotation type of this annotation
      */
     Class<? extends Annotation> annotationType();
 }

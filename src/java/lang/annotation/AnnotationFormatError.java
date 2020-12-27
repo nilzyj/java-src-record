@@ -1,33 +1,7 @@
-/*
- * Copyright (c) 2004, 2008, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
 package java.lang.annotation;
 
 /**
- * Thrown when the annotation parser attempts to read an annotation
- * from a class file and determines that the annotation is malformed.
+ * 当注解解析器试图从类文件中读取注解并确定注解是错误的时，抛出该错误。
  * This error can be thrown by the {@linkplain
  * java.lang.reflect.AnnotatedElement API used to read annotations
  * reflectively}.
@@ -40,10 +14,7 @@ public class AnnotationFormatError extends Error {
     private static final long serialVersionUID = -4256701562333669892L;
 
     /**
-     * Constructs a new <tt>AnnotationFormatError</tt> with the specified
-     * detail message.
-     *
-     * @param   message   the detail message.
+     * 用指定的细节信息构造一个新的AnnotationFormatError。
      */
     public AnnotationFormatError(String message) {
         super(message);
@@ -55,7 +26,6 @@ public class AnnotationFormatError extends Error {
      * with <code>cause</code> is <i>not</i> automatically incorporated in
      * this error's detail message.
      *
-     * @param  message the detail message
      * @param  cause the cause (A <tt>null</tt> value is permitted, and
      *     indicates that the cause is nonexistent or unknown.)
      */
