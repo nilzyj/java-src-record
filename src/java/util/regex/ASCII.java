@@ -1,37 +1,8 @@
-/*
- * Copyright (c) 1999, 2000, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
 package java.util.regex;
 
-
 /**
- * Utility class that implements the standard C ctype functionality.
- *
- * @author Hong Zhang
+ * 实现标准C类型功能的实用类。
  */
-
 final class ASCII {
 
     static final int UPPER   = 0x00000100;

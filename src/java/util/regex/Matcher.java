@@ -1,39 +1,11 @@
-/*
- * Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
 package java.util.regex;
 
 import java.util.Objects;
 
 /**
- * An engine that performs match operations on a {@linkplain java.lang.CharSequence
- * character sequence} by interpreting a {@link Pattern}.
+ * 通过解释Pattern，对{java.lang.CharSequence字符序列}执行匹配操作的引擎。
  *
- * <p> A matcher is created from a pattern by invoking the pattern's {@link
- * Pattern#matcher matcher} method.  Once created, a matcher can be used to
- * perform three different kinds of match operations:
+ * 通过调用模式的{Pattern#matcher matcher}方法，从模式中创建一个匹配器。创建后，匹配器可以用来执行三种不同的匹配操作：
  *
  * <ul>
  *
@@ -48,7 +20,7 @@ import java.util.Objects;
  *
  * </ul>
  *
- * <p> Each of these methods returns a boolean indicating success or failure.
+ * 这些方法中的每一个方法都会返回一个表示成功或失败的布尔值。
  * More information about a successful match can be obtained by querying the
  * state of the matcher.
  *
@@ -93,25 +65,17 @@ import java.util.Objects;
  *
  * <p> Instances of this class are not safe for use by multiple concurrent
  * threads. </p>
- *
- *
- * @author      Mike McCloskey
- * @author      Mark Reinhold
- * @author      JSR-51 Expert Group
- * @since       1.4
- * @spec        JSR-51
  */
 
 public final class Matcher implements MatchResult {
 
     /**
-     * The Pattern object that created this Matcher.
+     * 创建该Matcher的Pattern对象。
      */
     Pattern parentPattern;
 
     /**
-     * The storage used by groups. They may contain invalid values if
-     * a group was skipped during the matching.
+     * The storage used by groups. They may contain invalid values if a group was skipped during the matching.
      */
     int[] groups;
 
